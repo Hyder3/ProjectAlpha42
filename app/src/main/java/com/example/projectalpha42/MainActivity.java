@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         PokeAPI pokeAPI = retrofit.create(PokeAPI.class);
 
         Call<RestPokemonResponse> call = pokeAPI.getPokemonResponse();
+
         call.enqueue(new Callback<RestPokemonResponse>() {
             @Override
             public void onResponse(Call<RestPokemonResponse> call, Response<RestPokemonResponse> response) {
@@ -87,44 +88,6 @@ public class MainActivity extends AppCompatActivity {
                 showError();
             }
         });
-
-        /*Call<RestTypesResponse> call = pokeAPI.getTypesResponse();
-        call.enqueue(new Callback<RestTypesResponse>() {
-            @Override
-            public void onResponse(Call<RestTypesResponse> call, Response<RestTypesResponse> response) {
-                if(response.isSuccessful() &&  response.body() != null){
-                    List<Types> typesList = response.body().getResults();
-                    Toast.makeText(getApplicationContext(), "API Success", Toast.LENGTH_SHORT).show();
-
-                }else{
-                    showError();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<RestTypesResponse> call, Throwable t) {
-                showError();
-            }
-        });
-
-        Call<RestStatsResponse> call = pokeAPI.getStatsResponse();
-        call.enqueue(new Callback<RestStatsResponse>() {
-            @Override
-            public void onResponse(Call<RestStatsResponse> call, Response<RestStatsResponse> response) {
-                if(response.isSuccessful() && response.body() != null){
-                    List<Stats> typesList = response.body().getResults();
-                    Toast.makeText(getApplicationContext(), "API Success", Toast.LENGTH_SHORT).show();
-
-                }else{
-                    showError();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<RestStatsResponse> call, Throwable t) {
-                showError();
-            }
-        });*/
 
     }
 }
