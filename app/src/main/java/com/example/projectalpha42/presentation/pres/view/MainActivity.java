@@ -1,4 +1,4 @@
-package com.example.projectalpha42;
+package com.example.projectalpha42.presentation.pres.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,12 +9,16 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.projectalpha42.Constants;
+import com.example.projectalpha42.R;
+import com.example.projectalpha42.data.PokeAPI;
+import com.example.projectalpha42.presentation.pres.model.Pokemon;
+import com.example.projectalpha42.presentation.pres.model.RestPokemonResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;

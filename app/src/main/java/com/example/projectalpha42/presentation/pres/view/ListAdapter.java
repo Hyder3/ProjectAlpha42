@@ -1,4 +1,4 @@
-package com.example.projectalpha42;
+package com.example.projectalpha42.presentation.pres.view;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,6 +6,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.projectalpha42.R;
+import com.example.projectalpha42.presentation.pres.model.Pokemon;
 
 import java.util.List;
 

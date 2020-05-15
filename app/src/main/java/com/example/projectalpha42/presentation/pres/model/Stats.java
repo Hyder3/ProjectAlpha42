@@ -1,6 +1,6 @@
-package com.example.projectalpha42;
+package com.example.projectalpha42.presentation.pres.model;
 
-public class Types {
+public class Stats {
     private String name;
     private String url;
 
