@@ -1,15 +1,13 @@
 package com.example.projectalpha42.presentation.pres.controller;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.example.projectalpha42.Constants;
-import com.example.projectalpha42.data.PokeAPI;
+import com.example.projectalpha42.Singletons;
 import com.example.projectalpha42.presentation.pres.model.Pokemon;
 import com.example.projectalpha42.presentation.pres.model.RestPokemonResponse;
 import com.example.projectalpha42.presentation.pres.view.MainActivity;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -18,8 +16,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainController {
 
@@ -46,14 +42,8 @@ public class MainController {
     }
 
     private void makeApiCall(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
 
-        PokeAPI pokeAPI = retrofit.create(PokeAPI.class);
-
-        Call<RestPokemonResponse> call = pokeAPI.getPokemonResponse();
+        Call<RestPokemonResponse> call = Singletons.getPokeAPI().getPokemonResponse();
 
         call.enqueue(new Callback<RestPokemonResponse>() {
             @Override
