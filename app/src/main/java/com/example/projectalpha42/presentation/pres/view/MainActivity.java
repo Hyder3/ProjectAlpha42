@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ListAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    private MainController controller:
+    private MainController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
