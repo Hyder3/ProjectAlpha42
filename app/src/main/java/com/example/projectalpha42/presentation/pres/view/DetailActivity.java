@@ -36,6 +36,7 @@ public class DetailActivity extends AppCompatActivity {
     private void showDetail(Pokemon pokemon){
         textDetail.setText(pokemon.getName());
         textDetail.setText(pokemon.getUrl());
+        //
     }
 
 }
